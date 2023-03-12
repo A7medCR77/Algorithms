@@ -15,6 +15,12 @@ template < typename T = int > ostream& operator << (ostream &out, const vector <
     return out;
 }
 
+
+
+//Time Complexity: O(n*log(n))
+//Space Complexity: O(n)
+
+
 void Sort(vector<ll>&vec,ll l,ll r,ll mid)
 {
 
