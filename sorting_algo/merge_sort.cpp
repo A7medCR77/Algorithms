@@ -60,15 +60,15 @@ void Sort(vector<ll>&vec,ll l,ll r,ll mid)
 
 }
 
-void Merge(vector<ll>&vec,ll l,ll r)
+void Merge_Sort(vector<ll>&vec,ll l,ll r)
 {
     if(l<r)
     {
     ll mid=l+(r-l)/2;
 
-    Merge(vec,l,mid);
+    Merge_Sort(vec,l,mid);
 
-    Merge(vec,mid+1,r);
+    Merge_Sort(vec,mid+1,r);
 
     Sort(vec,l,r,mid);
     }
@@ -78,7 +78,7 @@ void solve()
 {
     vector<ll>vec={2,1,3,5,2,5};
     
-    Merge(vec,0,sz(vec)-1);
+    Merge_Sort(vec,0,sz(vec)-1);
 
     cout<<vec;
 }
