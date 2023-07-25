@@ -15,7 +15,7 @@ int ternary_search(vector<int> &vec)
             l = mid1 + 1;
     }
 
-    return min(vec[l],vec[r]);
+    return max(vec[l], vec[r]);
 }
 
 void solve()
