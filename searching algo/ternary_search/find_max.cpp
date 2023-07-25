@@ -15,7 +15,7 @@ int ternary_search(vector<int> &vec)
             l = mid1 + 1;
     }
 
-    return ((vec[l] > vec[r]) ? vec[l] : vec[r]);
+    return min(vec[l],vec[r]);
 }
 
 void solve()
