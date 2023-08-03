@@ -54,7 +54,7 @@ vector<ll> Dijkstra_algorithm(ll start, vector<vector<pair<ll, ll>>> &graph)
     return dis;
 }
 
-void siu()
+void solve()
 {
     vector<vector<pair<ll, ll>>> graph(3);
     for (int i = 0; i < 3; ++i)
@@ -73,7 +73,7 @@ int main()
     ll t = 1;
     while (t--)
     {
-        siu();
+        solve();
     }
     return 0;
 }
