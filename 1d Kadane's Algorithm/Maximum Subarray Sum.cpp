@@ -51,16 +51,29 @@ ostream &operator<<(ostream &out, const vector<T> &v)
     return out;
 }
 
-// Maximum Subarray Sum
+// Maximum Subarray Sum with dimensions
 // Time Complexity O(N)
-ll max_Kadane(int n, vector<ll> &vec)
+vector<ll> max_Kadane(ll n, vector<ll> &vec)
 {
-    ll sum = 0, ans = -OO;
+    vector<ll> ans(3, -OO);
+    ll sum = 0, l = 0, r = 0;
     for (int i = 0; i < n; ++i)
     {
         sum += vec[i];
-        ans = max(ans, sum);
-        sum = max(sum, 0ll);
+        if (ans[0] < sum)
+        {
+            ans[0] = sum;
+            ans[1] = l;
+            ans[2] = r;
+        }
+
+        r++;
+
+        if (sum < 0)
+        {
+            sum = 0;
+            l = r;
+        }
     }
 
     return ans;
