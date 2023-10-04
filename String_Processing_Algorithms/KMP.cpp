@@ -47,6 +47,8 @@ ostream &operator<<(ostream &out, const vector<T> &v)
 //  / ___ \  / /| | | | | |  __/ (_| | | |___|  _ <  / /
 // /_/   \_\/_/ |_| |_| |_|\___|\__,_|  \____|_| \_\/_/
 
+//Time Complexity O(n+m)
+
 vector<int> LPS(string pattern)
 {
     int n = sz(pattern);
