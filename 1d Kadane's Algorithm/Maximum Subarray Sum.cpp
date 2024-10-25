@@ -51,7 +51,7 @@ ostream &operator<<(ostream &out, const vector<T> &v)
     return out;
 }
 
-// Maximum Subarray Sum with dimensions
+// maximum subarray sum with dimensions
 // Time Complexity O(N)
 vector<ll> max_Kadane(ll n, vector<ll> &vec)
 {
