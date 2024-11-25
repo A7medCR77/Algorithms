@@ -93,7 +93,6 @@ void A7med(){
 int main(){
     A7med();
     ll t=1;
-    //cin>>t;
     while(t--){
         solve();
     }
