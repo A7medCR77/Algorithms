@@ -15,19 +15,16 @@ int n,q,result=0;
 vector<int>vec,ans;
 map<ll,ll>mp;
 
-struct mo
-{
+struct mo{
     int l,r,block_idx,q_idx;
 
     mo(){}
 
-    mo(int _l,int _r,int _q_idx)
-    {
+    mo(int _l,int _r,int _q_idx){
         l=_l,r=_r,q_idx=_q_idx,block_idx=int(_l/sqrt(n));
     }
 
-    bool operator <(const mo&rhs) const
-    {
+    bool operator <(const mo&rhs) const{
         if(block_idx!=rhs.block_idx)
             return block_idx<rhs.block_idx;
         return r<rhs.r;
@@ -38,28 +35,24 @@ struct mo
 //We modify this part according to the problem.
 vector<mo>v;
 
-void remove(int idx)
-{
+void remove(int idx){
     mp[vec[idx]]--;
     if(mp[vec[idx]]==2)
         result--;
 }
 
-void add(int idx)
-{
+void add(int idx){
     mp[vec[idx]]++;
     if(mp[vec[idx]]==3)
         result++;
 }
 
-void sol()
-{
+void sol(){
     sort(all(v));
 
     ll start=1,end=0;
 
-    for(int i=0;i<q;++i)
-    {
+    for(int i=0;i<q;++i){
         while (start<v[i].l)remove(start++);
         while (start>v[i].l)add(--start);
         while (end<v[i].r)add(++end);
@@ -70,8 +63,7 @@ void sol()
 
 //___________________________________________________________
 
-void solve()
-{
+void solve(){
     cin>>n;
     vec.assign(n+1,0);
     
@@ -82,8 +74,7 @@ void solve()
     ans.assign(q,0);
     v=vector<mo>(q+1);
 
-    for(int i=0;i<q;i++)
-    {
+    for(int i=0;i<q;i++){
         ll l,r;
         cin>>l>>r;
         v[i+1]=mo(l,r,i);
